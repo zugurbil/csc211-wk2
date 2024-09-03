@@ -1,0 +1,41 @@
+/*Copy Constructor:
+
+Takes another Person object as a parameter.
+Copies the name and age fields from the provided Person object to the new object being created.
+
+*/
+public class Person {
+
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Copy constructor
+    public Person(Person other) {
+        this.name = other.name;
+        this.age = other.age;
+    }
+
+    // Method to display person details
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    // Main method to test the copy constructor
+    public static void main(String[] args) {
+        // Create a Person object
+        Person original = new Person("Alice", 30);
+        System.out.print("Original Person: ");
+        original.displayInfo();
+
+        // Create a new Person object using the copy constructor
+        Person copy = new Person(original);
+        System.out.print("Copied Person: ");
+        copy.displayInfo();
+    }
+}

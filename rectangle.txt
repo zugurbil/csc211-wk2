@@ -1,0 +1,63 @@
+public class Rectangle {
+    // Attributes
+    private double width;
+    private double length;
+
+    // Default constructor
+    public Rectangle() {
+        this.width = 1.0;
+        this.length = 1.0;
+    }
+
+    // Parameterized constructor
+    public Rectangle(double width, double length) {
+        this.width = width;
+        this.length = length;
+    }
+
+    // Getters and Setters
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    // Method to calculate the area of the rectangle
+    public double getArea() {
+        return width * length;
+    }
+
+    // Method to calculate the perimeter of the rectangle
+    public double getPerimeter() {
+        return 2 * (width + length);
+    }
+
+    // Main method to test the Rectangle class
+    public static void main(String[] args) {
+        // Using default constructor
+        Rectangle rectangle1 = new Rectangle();
+        System.out.println("Rectangle 1:");
+        System.out.println("Width: " + rectangle1.getWidth());
+        System.out.println("Length: " + rectangle1.getLength());
+        System.out.println("Area: " + rectangle1.getArea());
+        System.out.println("Perimeter: " + rectangle1.getPerimeter());
+
+        // Using parameterized constructor
+        Rectangle rectangle2 = new Rectangle(4.5, 7.8);
+        System.out.println("\nRectangle 2:");
+        System.out.println("Width: " + rectangle2.getWidth());
+        System.out.println("Length: " + rectangle2.getLength());
+        System.out.println("Area: " + rectangle2.getArea());
+        System.out.println("Perimeter: " + rectangle2.getPerimeter());
+    }
+}

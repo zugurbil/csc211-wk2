@@ -1,0 +1,28 @@
+public class StaticExample {
+
+    // Static field
+    private static int staticCounter = 0;
+
+    // Static method to increment the staticCounter
+    public static void incrementCounter() {
+        staticCounter++;
+    }
+
+    // Static method to get the current value of staticCounter
+    public static int getCounter() {
+        return staticCounter;
+    }
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        System.out.println("Initial counter value: " + getCounter());
+
+        // Call the static method to increment the counter
+        incrementCounter();
+        incrementCounter();
+        incrementCounter();
+
+        // Get the updated counter value
+        System.out.println("Updated counter value: " + getCounter());
+    }
+}

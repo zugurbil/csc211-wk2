@@ -1,0 +1,40 @@
+public class Circle {
+
+    // Static variable to keep track of the number of Circle instances
+    private static int circleCount = 0;
+
+    // Instance variable for the radius of the circle
+    private double radius;
+
+    // Constructor to initialize the radius and increment circleCount
+    public Circle(double radius) {
+        this.radius = radius;
+        circleCount++;
+    }
+
+    // Method to calculate the area of the circle using Math.PI
+    public double getArea() {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    // Static method to get the number of Circle instances created
+    public static int getCircleCount() {
+        return circleCount;
+    }
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        // Creating instances of Circle
+        Circle circle1 = new Circle(5.0);
+        Circle circle2 = new Circle(10.0);
+        Circle circle3 = new Circle(2.5);
+
+        // Using the instance method to get the area of each circle
+        System.out.println("Area of circle1: " + circle1.getArea());
+        System.out.println("Area of circle2: " + circle2.getArea());
+        System.out.println("Area of circle3: " + circle3.getArea());
+
+        // Using the static method to get the number of Circle instances created
+        System.out.println("Total number of circles created: " + Circle.getCircleCount());
+    }
+}

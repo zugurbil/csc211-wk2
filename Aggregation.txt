@@ -1,0 +1,69 @@
+/*
+Department: A class containing a list of Employee objects, representing the collection of employees in the department.
+*/
+
+import java.util.ArrayList;
+import java.util.List;
+
+// Employee class representing the part in the aggregation relationship
+class Employee {
+    private String name;
+    private int id;
+
+    // Constructor to initialize Employee objects
+    public Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    // Method to display employee details
+    public void displayInfo() {
+        System.out.println("ID: " + id + ", Name: " + name);
+    }
+}
+
+// Department class representing the whole in the aggregation relationship
+class Department {
+    private String name;
+    private List<Employee> employees;
+
+    // Constructor to initialize the Department with a name and an empty list of employees
+    public Department(String name) {
+        this.name = name;
+        this.employees = new ArrayList<>();
+    }
+
+    // Method to add an employee to the department
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
+
+    // Method to display all employees in the department
+    public void displayEmployees() {
+        System.out.println("Department: " + name);
+        for (Employee employee : employees) {
+            employee.displayInfo();
+        }
+    }
+}
+
+// Main class to test the aggregation relationship
+public class AggregationExample {
+    public static void main(String[] args) {
+        // Create Employee objects
+        Employee emp1 = new Employee("Alice", 101);
+        Employee emp2 = new Employee("Bob", 102);
+        Employee emp3 = new Employee("Charlie", 103);
+
+        // Create a Department object
+        Department department = new Department("HR");
+
+        // Add employees to the department
+        department.addEmployee(emp1);
+        department.addEmployee(emp2);
+        department.addEmployee(emp3);
+
+        // Display all employees in the department
+        department.displayEmployees();
+    }
+}

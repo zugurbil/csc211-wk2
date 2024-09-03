@@ -1,0 +1,42 @@
+public class Person {
+    private String name;
+    private int age;
+
+    // Constructor to initialize Person objects
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // Method to display person details
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+public class Greeting {
+    // Method to print a greeting message using a Person object
+    public void greet(Person person) {
+        System.out.println("Hello, " + person.getName() + "! You are " + person.getAge() + " years old.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // Create a Person object
+        Person person = new Person("Alice", 30);
+
+        // Create a Greeting object
+        Greeting greeting = new Greeting();
+
+        // Pass the Person object to the greet method
+        greeting.greet(person);
+    }
+}

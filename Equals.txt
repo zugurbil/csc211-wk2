@@ -1,0 +1,71 @@
+/*
+Override equals Method:
+
+Checks if the object is compared with itself (this == obj). If true, it returns true.
+Checks if the object is an instance of the Person class. If not, it returns false.
+Casts the object to Person and compares the name and age fields for equality.
+Returns true if both fields are equal, otherwise false.
+Override hashCode Method:
+
+It's a good practice to override hashCode whenever you override equals to maintain consistency. This ensures that equal objects have the same hash code.
+
+*/
+
+
+
+public class Person {
+
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Override the equals method to compare Person objects based on name and age
+    @Override
+    public boolean equals(Object obj) {
+        // Check if the object is compared with itself
+        if (this == obj) {
+            return true;
+        }
+
+        // Check if the object is an instance of Person
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        // Typecast obj to Person so we can compare data members
+        Person other = (Person) obj;
+
+        // Compare the data members for equality
+        return name.equals(other.name) && age == other.age;
+    }
+
+    // Override the hashCode method to ensure consistency with equals
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + age;
+        return result;
+    }
+
+    // Method to display person details
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    // Main method to test the equals method
+    public static void main(String[] args) {
+        // Create Person objects
+        Person person1 = new Person("Alice", 30);
+        Person person2 = new Person("Alice", 30);
+        Person person3 = new Person("Bob", 25);
+
+        // Compare Person objects using the equals method
+        System.out.println("person1 equals person2: " + person1.equals(person2)); // Output: true
+        System.out.println("person1 equals person3: " + person1.equals(person3)); // Output: false
+    }
+}

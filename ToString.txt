@@ -1,0 +1,26 @@
+public class Person {
+
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Override the toString method to provide a custom string representation
+    @Override
+    public String toString() {
+        return "Person{name='" + name + "', age=" + age + "}";
+    }
+
+    // Main method to test the toString method
+    public static void main(String[] args) {
+        // Create a Person object
+        Person person = new Person("Alice", 30);
+
+        // Print the Person object using the overridden toString method
+        System.out.println(person);  // Output: Person{name='Alice', age=30}
+    }
+}

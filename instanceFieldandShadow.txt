@@ -1,0 +1,37 @@
+/*
+Scope of an Instance Field
+In Java, the scope of an instance field (also known as an instance variable) is the entire class where it is declared. This means that any method or block of code within that class can access the instance field, provided it follows the access control rules (e.g., private, protected, public).
+*/
+
+
+public class Example {
+    private int instanceField; // Instance field
+
+    public void method1() {
+        instanceField = 10; // Accessing instance field
+    }
+
+    public void method2() {
+        System.out.println(instanceField); // Accessing instance field
+    }
+}
+
+/*
+Shadowing
+Shadowing occurs when a variable declared within a certain scope (e.g., a method parameter or a local variable) has the same name as an instance field in the enclosing class. The local variable "shadows" the instance field within its scope, meaning that the local variable is used instead of the instance field.
+*/
+public class Example {
+    private int instanceField; // Instance field
+
+    public void method(int instanceField) { // Parameter shadows instance field
+        instanceField = 20; // Refers to the parameter, not the instance field
+        System.out.println(instanceField); // Refers to the parameter, not the instance field
+    }
+
+    public void display() {
+        System.out.println(instanceField); // Refers to the instance field
+    }
+}
+/*
+In this example, the parameter instanceField in method shadows the instance field with the same name. To access the instance field when it is shadowed, you can use the this keyword.
+*/

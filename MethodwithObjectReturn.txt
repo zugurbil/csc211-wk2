@@ -1,0 +1,30 @@
+public class Rectangle {
+
+    private double width;
+    private double length;
+
+    // Constructor
+    public Rectangle(double width, double length) {
+        this.width = width;
+        this.length = length;
+    }
+
+    // Method to calculate the area of the rectangle
+    public double getArea() {
+        return width * length;
+    }
+
+    // Static method to create and return a Rectangle object
+    public static Rectangle createRectangle(double width, double length) {
+        return new Rectangle(width, length);
+    }
+
+    // Main method to test returning objects from methods
+    public static void main(String[] args) {
+        // Create a Rectangle object using the static method
+        Rectangle rectangle = Rectangle.createRectangle(10.0, 5.0);
+        
+        // Display the area of the rectangle
+        System.out.println("Area of the rectangle: " + rectangle.getArea());  // Output: Area of the rectangle: 50.0
+    }
+}
