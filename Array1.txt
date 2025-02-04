@@ -1,0 +1,52 @@
+
+import java.util.Random;
+
+public class RandomArray {
+    
+    // Method to generate a random array of integers between 1 and 100
+
+    public static int[] generateArray(int size) {
+        Random rand = new Random();
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = rand.nextInt(100) + 1; // Random number between 1 and 100
+        }
+        return arr;
+    }
+
+    // Method to print the minimum and maximum elements of the array
+    public static void printMinMax(int[] arr) {
+        int min = arr[0];
+        int max = arr[0];
+        for (int num : arr) {
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+        System.out.println("Min element: " + min);
+        System.out.println("Max element: " + max);
+    }
+
+    // Method to print the elements of the array
+    public static void printArray(int[] arr) {
+        System.out.print("Array elements: ");
+        for (int num : arr) {
+            System.out.print( num + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Create an array of size 10
+        int[] randomArray = generateArray(10);
+        
+        // Print the array elements
+        printArray(randomArray);
+        
+        // Print the minimum and maximum element in the array
+        printMinMax(randomArray);
+    }
+}

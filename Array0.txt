@@ -1,0 +1,36 @@
+import java.util.Random;
+
+public class RandomEvenNumbers {
+
+    // Method to generate a random even number
+    public static int generateRandomEvenNumber(int min, int max) {
+        Random random = new Random();
+        int number;
+        do {
+            number = random.nextInt(max - min + 1) + min;
+        } while (number % 2 != 0);
+        return number;
+    }
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        int[] evenNumbers = new int[10];
+
+        // Fill the array with random even numbers
+        for (int i = 0; i < evenNumbers.length; i++) {
+            evenNumbers[i] = generateRandomEvenNumber(0, 100);
+        }
+
+        // Print the array
+        System.out.println("Array of random even numbers:");
+        for (int i=0  ;  i< evenNumbers.length; i++) {
+            System.out.print(evenNumbers[i] + " ");
+        }
+         System.out.println();
+         // Print the array in reverse  
+        System.out.println("In reverse order:" );
+         for (int i=evenNumbers.length-1  ;  i>=0; i--) {
+            System.out.print(evenNumbers[i] + " ");
+        }   
+    }
+}

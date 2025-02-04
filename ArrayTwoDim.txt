@@ -1,0 +1,32 @@
+public class TwoDArraySums {
+    
+    public static void main(String[] args) {
+        // Create a 2D double array of size 4x3
+        double[][] array = {
+            {1.2, 2.3, 3.4},
+            {4.5, 5.6, 6.7},
+            {7.8, 8.9, 9.1},
+            {10.1, 11.2, 12.3}
+        };
+        
+        // Compute row-wise sums
+        System.out.println("Row-wise sums:");
+        for (int i = 0; i < array.length; i++) {
+            double rowSum = 0;
+            for (int j = 0; j < array[i].length; j++) {
+                rowSum += array[i][j];
+            }
+            System.out.println("Sum of row " + (i + 1) + ": " + rowSum);
+        }
+        
+        // Compute column-wise sums
+        System.out.println("\nColumn-wise sums:");
+        for (int j = 0; j < array[0].length; j++) {
+            double colSum = 0;
+            for (int i = 0; i < array.length; i++) {
+                colSum += array[i][j];
+            }
+            System.out.println("Sum of column " + (j + 1) + ": " + colSum);
+        }
+    }
+}
